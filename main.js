@@ -187,7 +187,8 @@ function selectedSort(arr) {
                 minIndex = j;
             }
         }
-        swap(arr, minIndex, i);
+        if (i !== minIndex)
+            swap(arr, minIndex, i);
     }
     return arr;
 }
