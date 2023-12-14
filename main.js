@@ -156,29 +156,40 @@
 //     }
 // }
 // console.log(searchSubString(text, "baz"));  
-// function swap(arr:number [], index1:number, index2: number):void{
-//     const temp = arr [index1];
-//     console.log(temp,"temp1");
-//     arr[index1] = arr [index2];
-//     arr[index2] = temp;
-//     console.log(temp,"temp2");
-//     console.log(arr);
-// }
+function swap(arr, index1, index2) {
+    const temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+}
 // let arr: number[] = [5,2,7,2,87,6,4,34,4,67,8];
 // swap(arr,0,1);
-function bubbleSort(arr) {
-    let arrlength = arr.length;
-    for (let i = 0; i < arrlength - 1; i++) {
-        for (let j = 0; j < arrlength - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                let temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+// function bubbleSort(arr: number []): number[] {
+//     let arrlength = arr.  length;
+//     for (let i = 0; i < arrlength - 1; i++) { 
+//         for (let j = 0; j  < arrlength - 1; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 let indexSwitch = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = indexSwitch;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+let arr = [5, 2, 7, 2, 87, 6, 4, 34, 4, 67, 8, 1];
+// console.log(bubbleSort(arr));
+function selectedSort(arr) {
+    let minIndex;
+    for (let i = 0; i < arr.length - 1; i++) {
+        minIndex = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
             }
         }
+        swap(arr, minIndex, i);
     }
     return arr;
 }
-let arr = [5, 2, 7, 2, 87, 6, 4, 34, 4, 67, 8];
-console.log(bubbleSort(arr));
+console.log(selectedSort(arr));
 //# sourceMappingURL=main.js.map
