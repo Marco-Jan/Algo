@@ -176,21 +176,34 @@ function swap(arr, index1, index2) {
 //     }
 //     return arr;
 // }
-let arr = [5, 2, 7, 2, 87, 6, 4, 34, 4, 67, 8, 1];
+// let arr = [5, 2, 7, 2, 87, 6, 4, 34, 4, 67, 8, 1];
 // console.log(bubbleSort(arr));
-function selectedSort(arr) {
-    let minIndex;
-    for (let i = 0; i < arr.length - 1; i++) {
-        minIndex = i;
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j;
-            }
+// function selectedSort(arr: number[]): number[] {
+//     let minIndex: number;
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         minIndex = i
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[j] < arr[minIndex]) {
+//                 minIndex = j;
+//             }
+//         }
+//         if (i !== minIndex) swap(arr, minIndex, i);
+//     }
+//     return arr;
+// }
+// console.log(selectedSort(arr));
+let arr = [5, 2, 7, 2, 87, 6, 4, 34, 4, 67, 8, 1];
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let compareNum = arr[i];
+        let j = i - 1;
+        while (j >= 0 && arr[j] > compareNum) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
         }
-        if (i !== minIndex)
-            swap(arr, minIndex, i);
+        arr[j + 1] = compareNum;
     }
     return arr;
 }
-console.log(selectedSort(arr));
+console.log(insertionSort(arr));
 //# sourceMappingURL=main.js.map

@@ -302,17 +302,16 @@ let arr = [5, 2, 7, 2, 87, 6, 4, 34, 4, 67, 8, 1];
 
 function insertionSort(arr: number []): number[] {
     for (let i = 1; i < arr.length; i++) {
-        let key = arr[i];
+        let compareNum = arr[i];
         let j = i - 1;
 
-        // Verschieben der Elemente, die größer als key sind, um eine Position nach rechts
-        while (j >= 0 && arr[j] > key) {
+        while (j >= 0 && arr[j] > compareNum) {
             arr[j + 1] = arr[j];
+            
             j = j - 1;
         }
 
-        // Einfügen des key an der richtigen Position
-        arr[j + 1] = key;
+        arr[j + 1] = compareNum;
     }
     return arr;
 }
