@@ -233,14 +233,14 @@ function merge(arr1, arr2) {
     return result;
 }
 function mergeSort(arr) {
-    const middlePointer = Math.floor(arr.length / 2);
-    const leftPointer = arr.slice(0, middlePointer);
-    const rightPointer = arr.slice(middlePointer, arr.length);
     if (arr.length <= 1) {
         return arr;
     }
-    return merge(mergeSort(leftPointer), mergeSort(rightPointer));
+    const middlePointer = Math.floor(arr.length / 2);
+    const leftArr = arr.slice(0, middlePointer);
+    const rightArr = arr.slice(middlePointer, arr.length);
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
-let arr = [2, 45, 6, 8, 43, 4, 2, 63, 49, 67, 68, 78,];
+let arr = [2, 45, 6, 8, 43, 4, 2, 63, 49, 67, 68, 78, 4];
 console.log(mergeSort(arr));
 //# sourceMappingURL=main.js.map
