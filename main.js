@@ -192,18 +192,45 @@ function swap(arr, index1, index2) {
 //     return arr;
 // }
 // console.log(selectedSort(arr));
-let arr = [5, 2, 7, 2, 87, 6, 4, 34, 4, 67, 8, 1];
-function insertionSort(arr) {
-    for (let i = 1; i < arr.length; i++) {
-        let compareNum = arr[i];
-        let j = i - 1;
-        while (j >= 0 && arr[j] > compareNum) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
+// let arr = [5, 2, 7, 2, 87, 6, 4, 34, 4, 67, 8, 1];
+// function insertionSort(arr: number []): number[] {
+//     for (let i = 1; i < arr.length; i++) {
+//         let compareNum = arr[i];
+//         let j = i - 1;
+//         while (j >= 0 && arr[j] > compareNum) {
+//             arr[j + 1] = arr[j];
+//             j = j - 1;
+//         }
+//         arr[j + 1] = compareNum;
+//     }
+//     return arr;
+// }
+// console.log(insertionSort(arr));
+let arr1 = [2, 56, 7, 23];
+let arr2 = [5, 34, 91, 3];
+function merge(arr1, arr2) {
+    let result = [];
+    let i = 0;
+    let j = 0;
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            result.push(arr1[i]);
+            i++;
         }
-        arr[j + 1] = compareNum;
+        else {
+            result.push(arr2[j]);
+            j++;
+        }
     }
-    return arr;
+    while (i < arr1.length) {
+        result.push(arr1[i]);
+        i++;
+    }
+    while (j < arr2.length) {
+        result.push(arr2[j]);
+        j++;
+    }
+    return result;
 }
-console.log(insertionSort(arr));
+console.log(merge(arr1, arr2));
 //# sourceMappingURL=main.js.map
