@@ -206,8 +206,8 @@ function swap(arr, index1, index2) {
 //     return arr;
 // }
 // console.log(insertionSort(arr));
-let arr1 = [2, 56, 7, 23, 4];
-let arr2 = [5, 34, 91, 3];
+// let arr1 = [2,4,7,23,56];
+// let arr2 = [3,5,34,91,];
 function merge(arr1, arr2) {
     let result = [];
     let arr1Index = 0;
@@ -232,5 +232,15 @@ function merge(arr1, arr2) {
     }
     return result;
 }
-console.log(merge(arr1, arr2));
+function mergeSort(arr) {
+    const middlePointer = Math.floor(arr.length / 2);
+    const leftPointer = arr.slice(0, middlePointer);
+    const rightPointer = arr.slice(middlePointer, arr.length);
+    if (arr.length <= 1) {
+        return arr;
+    }
+    return merge(mergeSort(leftPointer), mergeSort(rightPointer));
+}
+let arr = [2, 45, 6, 8, 43, 4, 2, 63, 49, 67, 68, 78,];
+console.log(mergeSort(arr));
 //# sourceMappingURL=main.js.map

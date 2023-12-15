@@ -318,8 +318,8 @@ function swap(arr: number[], index1: number, index2: number): void {
 
 // console.log(insertionSort(arr));
 
-let arr1 = [2,56,7,23,4];
-let arr2 = [5,34,91,3];
+// let arr1 = [2,4,7,23,56];
+// let arr2 = [3,5,34,91,];
 
 function merge(arr1: number[], arr2: number[]): number[] {
     let result: number[] = [];
@@ -349,4 +349,23 @@ function merge(arr1: number[], arr2: number[]): number[] {
     return result;
 }
 
-console.log(merge(arr1,arr2));
+
+
+function mergeSort(arr: number[]): number[] {
+    
+    const middlePointer = Math.floor(arr.length / 2);
+    const leftPointer = arr.slice(0, middlePointer);
+    const rightPointer = arr.slice(middlePointer, arr.length);
+
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    return merge(mergeSort(leftPointer), mergeSort(rightPointer));
+
+    
+}
+
+let arr: number []= [2,45,6,8,43,4,2,63,49,67,68,78,]
+
+console.log(mergeSort(arr));
