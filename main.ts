@@ -321,6 +321,10 @@
 // let arr1 = [2,4,7,23,56];
 // let arr2 = [3,5,34,91,];
 
+
+let arr: number []= [2,45,6,8,43,4,2,63,49,67,68,78,4];
+
+
 function merge(arr1: number[], arr2: number[]): number[] {
     let result: number[] = [];
     let arr1Index = 0
@@ -345,6 +349,8 @@ function merge(arr1: number[], arr2: number[]): number[] {
         result.push(arr2[array2Index]);
         array2Index++;
     }
+    console.log(result,"result");
+    
 
     return result;
 }
@@ -361,6 +367,9 @@ function mergeSort(arr: number[]): number[] {
     const leftArr = arr.slice(0, middlePointer);
     const rightArr = arr.slice(middlePointer, arr.length);
 
+    //console.log(leftArr,"left")
+    //console.log(rightArr,"right");
+    ;
     
 
     return merge(mergeSort(leftArr), mergeSort(rightArr));
@@ -368,6 +377,6 @@ function mergeSort(arr: number[]): number[] {
     
 }
 
-let arr: number []= [2,45,6,8,43,4,2,63,49,67,68,78,4]
+
 
 console.log(mergeSort(arr));

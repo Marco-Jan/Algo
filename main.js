@@ -208,6 +208,8 @@
 // console.log(insertionSort(arr));
 // let arr1 = [2,4,7,23,56];
 // let arr2 = [3,5,34,91,];
+let arr = [2, 45, 6, 8, 43, 4, 2, 63, 49, 67, 68, 78, 4];
+
 function merge(arr1, arr2) {
     let result = [];
     let arr1Index = 0;
@@ -230,8 +232,10 @@ function merge(arr1, arr2) {
         result.push(arr2[array2Index]);
         array2Index++;
     }
+    console.log(result, "result");
     return result;
 }
+
 function mergeSort(arr) {
     if (arr.length <= 1) {
         return arr;
@@ -239,8 +243,10 @@ function mergeSort(arr) {
     const middlePointer = Math.floor(arr.length / 2);
     const leftArr = arr.slice(0, middlePointer);
     const rightArr = arr.slice(middlePointer, arr.length);
+    //console.log(leftArr,"left")
+    //console.log(rightArr,"right");
+    ;
     return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
-let arr = [2, 45, 6, 8, 43, 4, 2, 63, 49, 67, 68, 78, 4];
+
 console.log(mergeSort(arr));
-//# sourceMappingURL=main.js.map
