@@ -237,16 +237,16 @@
 // console.log(searchSubString(text, "baz"));  
 
 
-function swap(arr: number[], index1: number, index2: number): void {
-    const temp = arr[index1];
+// function swap(arr: number[], index1: number, index2: number): void {
+//     const temp = arr[index1];
 
-    arr[index1] = arr[index2];
-    arr[index2] = temp;
-
-
+//     arr[index1] = arr[index2];
+//     arr[index2] = temp;
 
 
-}
+
+
+// }
 
 // let arr: number[] = [5,2,7,2,87,6,4,34,4,67,8];
 
