@@ -206,7 +206,7 @@ function swap(arr, index1, index2) {
 //     return arr;
 // }
 // console.log(insertionSort(arr));
-let arr1 = [2, 56, 7, 23];
+let arr1 = [2, 56, 7, 23, 4];
 let arr2 = [5, 34, 91, 3];
 function merge(arr1, arr2) {
     let result = [];

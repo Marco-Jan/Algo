@@ -318,7 +318,7 @@ function swap(arr: number[], index1: number, index2: number): void {
 
 // console.log(insertionSort(arr));
 
-let arr1 = [2,56,7,23];
+let arr1 = [2,56,7,23,4];
 let arr2 = [5,34,91,3];
 
 function merge(arr1: number[], arr2: number[]): number[] {
